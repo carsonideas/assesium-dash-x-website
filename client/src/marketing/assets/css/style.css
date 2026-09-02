@@ -1,0 +1,497 @@
+/* Theme Variables */
+:root {
+  /* Dark theme (default) */
+  --bg-primary: #0a0a12;
+  --bg-secondary: #000000;
+  --bg-hero: #000000;
+  --text-primary: #ffffff;
+  --text-secondary: #d4d4d8;
+  --text-muted: #a1a1aa;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --nav-bg: rgba(10, 10, 18, 0.8);
+    --hero-bg-image: none;
+  --accent-primary: #8b5cf6;
+  --accent-secondary: #6366f1;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --button-primary: linear-gradient(135deg, #8b5cf6, #6366f1);
+  --button-secondary: rgba(255, 255, 255, 0.1);
+  --shadow-primary: rgba(139, 92, 246, 0.25);
+  --shadow-secondary: rgba(0, 0, 0, 0.5);
+}
+
+.light {
+  /* Light theme with peach colors */
+  --bg-primary: #fff0f5;
+  --bg-secondary: #ffe4e1;
+  --bg-hero: #fff0f5;
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --text-muted: #555555;
+  --border-color: rgba(255, 182, 193, 0.2);
+  --nav-bg: rgba(255, 240, 245, 0.95);
+  --hero-bg-image: none;
+  --accent-primary: #ffb6c1;
+  --accent-secondary: #ff69b4;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(255, 182, 193, 0.15);
+  --button-primary: linear-gradient(135deg, #ffb6c1, #ff69b4);
+  --button-secondary: rgba(255, 182, 193, 0.1);
+  --shadow-primary: rgba(255, 182, 193, 0.25);
+  --shadow-secondary: rgba(255, 182, 193, 0.15);
+}
+
+/* Base styles using CSS variables */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hero section specific styling */
+.hero-section {
+  background-color: var(--bg-hero) !important;
+  background-image: var(--hero-bg-image) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  transition: background-color 0.3s ease, background-image 0.3s ease;
+}
+
+/* Navigation styling */
+.nav-header {
+  background-color: var(--nav-bg) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Enhanced Button Styles */
+.btn-primary {
+  background: var(--button-primary) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 4px 12px var(--shadow-primary) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 16px var(--shadow-primary) !important;
+  scale: 1.01 !important;
+}
+
+.btn-primary:active {
+  transform: translateY(0) !important;
+  scale: 1 !important;
+}
+
+.btn-secondary {
+  background: var(--button-secondary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  backdrop-filter: blur(12px) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-secondary:hover {
+  background: var(--card-bg) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 8px var(--shadow-secondary) !important;
+}
+
+/* Theme Toggle Button Enhancements */
+#theme-toggle {
+  background: var(--button-primary) !important;
+  border: none !important;
+  box-shadow: 0 4px 12px var(--shadow-primary) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+#theme-toggle:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px var(--shadow-primary) !important;
+}
+
+#theme-toggle span {
+  background: transparent !important;
+  color: white !important;
+}
+
+.light .card-enhanced {
+  background: rgba(254, 247, 237, 0.4) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(194, 65, 12, 0.15) !important;
+  box-shadow: 0 4px 16px rgba(234, 88, 12, 0.08) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.light .card-enhanced:hover {
+  background: rgba(254, 247, 237, 0.6) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(234, 88, 12, 0.12) !important;
+}
+
+/* Text color fixes for light theme - keeping original colors */
+/* Removed text color overrides to maintain original text appearance */
+
+/* Text color fixes for semi-light theme */
+.semi-light .text-white {
+  color: var(--text-primary) !important;
+}
+
+.semi-light .text-zinc-300,
+.semi-light .text-zinc-200 {
+  color: var(--text-secondary) !important;
+}
+
+.semi-light .text-zinc-400 {
+  color: var(--text-muted) !important;
+}
+
+/* Background fixes for light theme */
+.light .bg-white\/5,
+.light .bg-white\/10 {
+  background-color: var(--button-secondary) !important;
+}
+
+.light .border-white\/10,
+.light .border-white\/5 {
+  border-color: var(--border-color) !important;
+}
+
+.light .ring-white\/10,
+.light .ring-white\/20 {
+  --tw-ring-color: var(--border-color) !important;
+}
+
+/* Background fixes for semi-light theme */
+.semi-light .bg-white\/5,
+.semi-light .bg-white\/10 {
+  background-color: var(--button-secondary) !important;
+}
+
+.semi-light .border-white\/10,
+.semi-light .border-white\/5 {
+  border-color: var(--border-color) !important;
+}
+
+.semi-light .ring-white\/10,
+.semi-light .ring-white\/20 {
+  --tw-ring-color: var(--border-color) !important;
+}
+
+/* Navigation specific fixes */
+.light .bg-\[\#0a0a12\]\/80 {
+  background-color: var(--nav-bg) !important;
+}
+
+.light .backdrop-blur-xl {
+  background-color: var(--nav-bg) !important;
+}
+
+/* Hero section content styling for light mode - keeping original text colors */
+.light .hero-section {
+  background-color: var(--bg-hero) !important;
+  background-image: var(--hero-bg-image) !important;
+}
+
+/* Enhanced CTA Buttons */
+.light .bg-gradient-to-br {
+  background: var(--button-primary) !important;
+}
+
+/* App preview section adjustments for light mode */
+.light .app-preview,
+.light .bg-white\/5 {
+  background-color: var(--card-bg) !important;
+  border-color: var(--card-border) !important;
+}
+
+.light .ring-1.ring-white\/10 {
+  border-color: var(--card-border) !important;
+}
+
+/* Section styling - keeping original text colors */
+.light section {
+  background-color: var(--bg-primary) !important;
+  /* Removed text color overrides to maintain original appearance */
+}
+
+/* Enhanced Navigation Links */
+.light nav a {
+  color: var(--text-secondary) !important;
+  transition: all 0.3s ease !important;
+}
+
+.light nav a:hover {
+  color: var(--text-primary) !important;
+  background-color: var(--button-secondary) !important;
+  border-radius: 8px !important;
+}
+
+/* Background glow effects for light mode */
+.light .bg-\[radial-gradient\(closest-side\,rgba\(138\,92\,246\,0\.55\)\,rgba\(18\,18\,27\,0\)\)\] {
+  background: radial-gradient(closest-side, rgba(124, 58, 237, 0.15), rgba(248, 250, 252, 0)) !important;
+}
+
+.light .bg-\[radial-gradient\(closest-side\,rgba\(99\,102\,241\,0\.45\)\,rgba\(18\,18\,27\,0\)\)\] {
+  background: radial-gradient(closest-side, rgba(79, 70, 229, 0.12), rgba(248, 250, 252, 0)) !important;
+}
+
+/* Enhanced Notification Badge */
+.light .bg-white\/5.backdrop-blur {
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+  color: var(--text-secondary) !important;
+}
+
+/* Avatar/Profile Images */
+.light .bg-zinc-200,
+.light .bg-zinc-300,
+.light .bg-zinc-400 {
+  background-color: var(--accent-primary) !important;
+}
+
+.light .ring-white {
+  --tw-ring-color: var(--bg-primary) !important;
+}
+
+/* Sidebar and App Preview Enhancements */
+.light .supports-\[backdrop-filter\]\:bg-white\/5 {
+  background-color: var(--card-bg) !important;
+  border-color: var(--card-border) !important;
+}
+
+/* Override any remaining dark backgrounds */
+.light [class*="bg-slate-"],
+.light [class*="bg-gray-"],
+.light [class*="bg-zinc-"] {
+  background-color: var(--bg-primary) !important;
+}
+
+/* Ensure text visibility */
+.light [class*="text-slate-"],
+.light [class*="text-gray-"],
+.light [class*="text-zinc-"] {
+  color: var(--text-secondary) !important;
+}
+
+/* Dark theme specific styles */
+.dark .hero-section {
+  background-color: var(--bg-hero) !important;
+  background-image: var(--hero-bg-image) !important;
+}
+
+/* Smooth transitions for all theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Special handling for hero content div */
+.hero-content {
+  background: transparent !important;
+}
+
+.light .hero-content {
+  background: transparent !important;
+}
+
+/* Glass Effect Containers for Light Mode */
+.light .glass-container {
+  background: rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(234, 88, 12, 0.2) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(234, 88, 12, 0.1) !important;
+}
+
+.light .glass-card {
+  background: rgba(254, 247, 237, 0.4) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(194, 65, 12, 0.15) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(234, 88, 12, 0.08) !important;
+}
+
+.light .glass-nav {
+  background: rgba(254, 247, 237, 0.8) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(194, 65, 12, 0.1) !important;
+}
+
+.light .glass-hero {
+  background: rgba(255, 237, 213, 0.3) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(251, 146, 60, 0.2) !important;
+  border-radius: 20px !important;
+}
+
+.light .glass-sidebar {
+  background: rgba(254, 247, 237, 0.6) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(194, 65, 12, 0.12) !important;
+  border-radius: 14px !important;
+}
+
+/* Enhanced glass effects for existing elements */
+.interactive-element {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.interactive-element:hover {
+  transform: translateY(-1px) !important;
+}
+
+/* Focus States */
+.light *:focus-visible {
+  outline: 2px solid var(--accent-primary) !important;
+  outline-offset: 2px !important;
+}
+
+/* Loading States */
+.loading {
+  opacity: 0.7 !important;
+  pointer-events: none !important;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+  .btn-primary,
+  .btn-secondary {
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+  }
+  
+  .card-enhanced {
+    margin: 8px !important;
+  }
+}
+
+
+
+/* Semi-light theme comprehensive styles */
+.semi-light .bg-\[\#0a0a12\]\/80 {
+  background-color: var(--nav-bg) !important;
+}
+
+.semi-light .backdrop-blur-xl {
+  background-color: var(--nav-bg) !important;
+}
+
+.semi-light .hero-section {
+  background-color: var(--bg-hero) !important;
+  background-image: var(--hero-bg-image) !important;
+}
+
+.semi-light .hero-section .text-white {
+  color: var(--text-primary) !important;
+}
+
+.semi-light .hero-section .text-zinc-300 {
+  color: var(--text-secondary) !important;
+}
+
+.semi-light .hero-section .text-zinc-200 {
+  color: var(--text-muted) !important;
+}
+
+.semi-light .bg-gradient-to-br {
+  background: var(--button-primary) !important;
+}
+
+.semi-light .app-preview,
+.semi-light .bg-white\/5 {
+  background-color: var(--card-bg) !important;
+  border-color: var(--card-border) !important;
+}
+
+.semi-light .ring-1.ring-white\/10 {
+  border-color: var(--card-border) !important;
+}
+
+.semi-light section {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.semi-light h1,
+.semi-light h2,
+.semi-light h3,
+.semi-light h4,
+.semi-light h5,
+.semi-light h6 {
+  color: var(--text-primary) !important;
+}
+
+.semi-light p {
+  color: var(--text-secondary) !important;
+}
+
+.semi-light nav a {
+  color: var(--text-secondary) !important;
+  transition: all 0.3s ease !important;
+}
+
+.semi-light nav a:hover {
+  color: var(--text-primary) !important;
+  background-color: var(--button-secondary) !important;
+  border-radius: 8px !important;
+}
+
+.semi-light .bg-\[radial-gradient\(closest-side\,rgba\(138\,92\,246\,0\.55\)\,rgba\(18\,18\,27\,0\)\)\] {
+  background: radial-gradient(closest-side, rgba(234, 88, 12, 0.15), rgba(254, 247, 237, 0)) !important;
+}
+
+.semi-light .bg-\[radial-gradient\(closest-side\,rgba\(99\,102\,241\,0\.45\)\,rgba\(18\,18\,27\,0\)\)\] {
+  background: radial-gradient(closest-side, rgba(220, 38, 38, 0.12), rgba(254, 247, 237, 0)) !important;
+}
+
+.semi-light .bg-white\/5.backdrop-blur {
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+  color: var(--text-secondary) !important;
+}
+
+.semi-light .bg-zinc-200,
+.semi-light .bg-zinc-300,
+.semi-light .bg-zinc-400 {
+  background-color: var(--accent-primary) !important;
+}
+
+
+
+
+
+/* Light mode specific gradient background */
+.light .gradient-bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(-15deg);
+  width: 120vw;
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(255, 140, 0, 0.95) 0%, rgba(255, 165, 0, 0.85) 15%, rgba(255, 192, 203, 0.8) 35%, rgba(255, 105, 180, 0.75) 55%, rgba(147, 51, 234, 0.65) 75%, rgba(79, 70, 229, 0.55) 90%, rgba(59, 130, 246, 0.45) 100%);
+  filter: blur(80px);
+  opacity: 0.8;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+/* Light mode glass overlay for extra glossy effect */
+.light .glass-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(10px);
+  z-index: -1;
+}
+
+
+

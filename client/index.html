@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (() => {
+        const deviceWidth = Math.min(window.screen.width || 980, 980);
+        const initialScale = deviceWidth < 980 ? deviceWidth / 980 : 1;
+        document.write(`<meta name="viewport" content="width=980, initial-scale=${initialScale}, maximum-scale=${initialScale}, user-scalable=no, viewport-fit=cover" />`);
+      })();
+    </script>
+    <title>Assesium Dashboard - AI Exam Marking Platform</title>
+    <link rel="icon" type="image/png" sizes="64x64" href="/assesium-a-favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="64x64" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script type="module">
+      const analyticsEndpoint = import.meta.env.VITE_ANALYTICS_ENDPOINT;
+      const analyticsWebsiteId = import.meta.env.VITE_ANALYTICS_WEBSITE_ID;
+      if (analyticsEndpoint && analyticsWebsiteId) {
+        const analyticsScript = document.createElement('script');
+        analyticsScript.defer = true;
+        analyticsScript.src = `${analyticsEndpoint}/umami`;
+        analyticsScript.dataset.websiteId = analyticsWebsiteId;
+        document.head.appendChild(analyticsScript);
+      }
+    </script>
+  </body>
+
+</html>

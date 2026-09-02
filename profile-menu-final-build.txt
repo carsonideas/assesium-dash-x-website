@@ -1,0 +1,82 @@
+[WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.patchedDependencies", "pnpm.overrides". See https://pnpm.io/settings for the new home of each setting.
+
+> assesium-dashboard@1.0.0 build /home/ubuntu/assesium-dashboard
+> vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+
+vite v7.1.9 building for production...
+transforming...
+[plugin vite:esbuild] client/src/pages/EnhancedPayments.tsx: This case clause will never be evaluated because it duplicates an earlier case clause
+264 |            currency = 'EUR';
+265 |            break;
+266 |          case 'ideal':
+    |               ^
+267 |            region = 'Netherlands';
+268 |            currency = 'EUR';
+
+[plugin vite:esbuild] client/src/pages/EnhancedPayments.tsx: This case clause will never be evaluated because it duplicates an earlier case clause
+268 |            currency = 'EUR';
+269 |            break;
+270 |          case 'sofort':
+    |               ^
+271 |          case 'giropay':
+272 |            region = 'Germany';
+
+[plugin vite:esbuild] client/src/pages/EnhancedPayments.tsx: This case clause will never be evaluated because it duplicates an earlier case clause
+269 |            break;
+270 |          case 'sofort':
+271 |          case 'giropay':
+    |               ^
+272 |            region = 'Germany';
+273 |            currency = 'EUR';
+
+[plugin vite:esbuild] client/src/pages/EnhancedPayments.tsx: This case clause will never be evaluated because it duplicates an earlier case clause
+273 |            currency = 'EUR';
+274 |            break;
+275 |          case 'eps':
+    |               ^
+276 |            region = 'Austria';
+277 |            currency = 'EUR';
+
+[plugin vite:esbuild] client/src/pages/EnhancedPayments.tsx: This case clause will never be evaluated because it duplicates an earlier case clause
+277 |            currency = 'EUR';
+278 |            break;
+279 |          case 'p24':
+    |               ^
+280 |          case 'blik':
+281 |            region = 'Poland';
+
+[plugin vite:esbuild] client/src/pages/EnhancedPayments.tsx: This case clause will never be evaluated because it duplicates an earlier case clause
+278 |            break;
+279 |          case 'p24':
+280 |          case 'blik':
+    |               ^
+281 |            region = 'Poland';
+282 |            currency = 'PLN';
+
+[plugin vite:esbuild] client/src/pages/EnhancedPayments.tsx: This case clause will never be evaluated because it duplicates an earlier case clause
+282 |            currency = 'PLN';
+283 |            break;
+284 |          case 'bancontact':
+    |               ^
+285 |            region = 'Belgium';
+286 |            currency = 'EUR';
+
+✓ 2671 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/public/index.html                            367.83 kB │ gzip: 105.60 kB
+../dist/public/assets/index-CFp8Kbid.css             183.47 kB │ gzip:  28.35 kB
+../dist/public/assets/purify.es-BwoZCkIS.js           22.03 kB │ gzip:   8.77 kB
+../dist/public/assets/index.es-C5-M64JZ.js           159.72 kB │ gzip:  53.54 kB
+../dist/public/assets/html2canvas.esm-B0tyYwQk.js    202.36 kB │ gzip:  48.04 kB
+../dist/public/assets/index-B81Z-gEA.js            2,949.93 kB │ gzip: 689.32 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 5.46s
+
+  dist/index.js  788b 
+
+⚡ Done in 5ms
